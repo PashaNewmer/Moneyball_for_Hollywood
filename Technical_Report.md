@@ -288,7 +288,10 @@ I assigned our target and combine scripts with titles into one column.
 Then again I used CountVectorizer with logistic regression, KFold and RandomForestClassifier. And GridSearch with KNeighborsClassifier and VoringClassifier with AdaBoostClassifier and GradientBoostingClassifier.  
 Unfortunaly none of this models showed any promising results. Logistic regression with KFold split showed the highes 0.645 cross validation score, but it is not the result we want, considering our 0.615 benchmark.  
   
-#### And then I decided to use the most advanced NLP technique - DOCtoVEC.  
+### And then I decided to use the most advanced NLP technique - DOCtoVEC.   
+  
+#### This techniques I learned from incredible Data Scientist Susan Li, from her post [Multi-Class Text Classification with Doc2Vec & Logistic Regression](https://towardsdatascience.com/multi-class-text-classification-with-doc2vec-logistic-regression-9da9947b43f4), with huge appreciation and gratitude.
+  
 First I prepared the data. Split everything into separate words, clean unnecessary symbols and bring everything to the lower case and eventually got 51+ millions of words.  
 Then used train/test split, removed stop-words and tokenized text using NLTK tokenizer for text data and target, for training and testing set.  
 For this kind of model I needed all my computational power and I made sure that I use all my worker threads to train the model by using multiprocessing.cpu_count().  
